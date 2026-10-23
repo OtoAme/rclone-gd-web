@@ -16,24 +16,32 @@
       <header>
         <a class="brand" href="index.html">Local Drive Sync</a>
         <nav aria-label="本站页面">
-          <a href="index.html" aria-current="page">首页</a>
-          <a href="privacy.html">隐私权政策</a>
-          <a href="terms.html">服务条款</a>
+          <a href="https://nav.otoame.top/rclone-gd-web/" aria-current="page">首页</a>
+          <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">隐私权政策</a>
+          <a href="https://nav.otoame.top/rclone-gd-web/terms.html">服务条款</a>
         </nav>
       </header>
 
       <main id="content">
         <h1>Local Drive Sync</h1>
-        <p class="lede">个人在自己的电脑上，用开源程序 rclone 访问自己的 Google 云端硬盘时，所使用的 OAuth 客户端。</p>
-        <p class="meta">最后更新：2026-10-23。本页公开可读，无需登录。</p>
-        <p class="lang-switch"><a href="#zh">中文</a> · <a href="#en">English</a></p>
+        <p class="meta">最后更新：2026-10-23。本页对所有访客直接显示。</p>
+
+        <section id="purpose" lang="en">
+          <h2>Purpose of this application</h2>
+          <p>Local Drive Sync is a personal OAuth client for Google Drive. Its purpose is to let one developer, on a computer that developer controls, use the open-source program rclone to list, upload, download, copy, sync, move, rename, delete, mount, and check files in a Google Drive account that developer is allowed to use.</p>
+          <p>The shared rclone client_id is being retired. This client replaces it for that developer only. Local Drive Sync is not a Google product and is not operated by the rclone project. This website only explains the client. It does not provide file storage, it does not sync files, and it has no account page.</p>
+          <p>The only Google scope this client requests is <code class="url">https://www.googleapis.com/auth/drive</code>. That scope is required so rclone can work on files that are already in the Drive. Tokens stay in the rclone config on the user's computer. This website is not the OAuth redirect URI and does not receive the authorization code, the token, or the files.</p>
+        </section>
 
         <div class="policies">
-          <strong>授权前请先阅读下面两份文件。它们与本首页在同一网站。</strong>
-          <a href="privacy.html">隐私权政策</a>
-          ·
-          <a href="terms.html">服务条款</a>
+          <strong>Privacy policy and terms, on this same website:</strong>
+          <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">https://nav.otoame.top/rclone-gd-web/privacy.html</a>
+          <br>
+          <a href="https://nav.otoame.top/rclone-gd-web/terms.html">https://nav.otoame.top/rclone-gd-web/terms.html</a>
         </div>
+
+        <p class="lede">个人在自己的电脑上，用开源程序 rclone 访问自己的 Google 云端硬盘时，所使用的 OAuth 客户端。</p>
+        <p class="lang-switch"><a href="#zh">中文</a> · <a href="#en">English</a></p>
 
         <div id="zh" lang="zh-Hans">
           <h2>这个应用是什么</h2>
@@ -135,8 +143,8 @@
 
       <footer>
         <nav aria-label="页脚">
-          <a href="privacy.html">隐私权政策</a>
-          <a href="terms.html">服务条款</a>
+          <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">隐私权政策</a>
+          <a href="https://nav.otoame.top/rclone-gd-web/terms.html">服务条款</a>
         </nav>
         <p>Local Drive Sync 与 Google、rclone 项目均无隶属关系。最后更新：2026-10-23。</p>
       </footer>
