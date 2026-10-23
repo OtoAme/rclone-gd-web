@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>隐私权政策 · Local Drive Sync</title>
-  <meta name="description" content="Local Drive Sync 如何访问、使用、保存、共享、保护和删除 Google 用户数据。">
+  <meta name="description" content="Local Drive Sync 如何访问、使用、保存、共享和删除 Google 用户数据。">
   <meta name="robots" content="index,follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
   <div class="wrap">
     <article class="sheet">
       <header>
-        <a class="brand" href="index.html">Local Drive Sync</a>
+        <a class="brand" href="https://nav.otoame.top/rclone-gd-web/">Local Drive Sync</a>
         <nav aria-label="本站页面">
           <a href="https://nav.otoame.top/rclone-gd-web/">首页</a>
           <a href="https://nav.otoame.top/rclone-gd-web/privacy.html" aria-current="page">隐私权政策</a>
@@ -24,273 +24,89 @@
 
       <main id="content">
         <h1>隐私权政策</h1>
-        <p class="meta">生效并最后更新：2026-10-23。应用名称：Local Drive Sync。</p>
+        <p><strong>版本号：1.0</strong><br>生效日期：2026-10-23<br>应用名称：Local Drive Sync</p>
+        <p>本隐私权政策说明 Local Drive Sync 如何处理 Google 用户数据。</p>
+        <p>数据访问发生在使用者自己的电脑上。本网站不收集、不保存、不上传云端硬盘文件或 OAuth 令牌。</p>
 
-        <section id="data-collection" lang="en">
-          <h2>Data collection and usage</h2>
-          <p>This policy describes how the OAuth application Local Drive Sync accesses, uses, stores, shares, and deletes Google user data. The program that calls Google APIs is rclone, running on the user's own computer. This website does not collect that data.</p>
-          <div class="table-scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>Question</th>
-                  <th>What Local Drive Sync does</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Google user data that is accessed</td>
-                  <td>From the Google Drive account the user authorizes: file and folder names, IDs, MIME types, sizes, modification times, checksums, parent folders, and file contents. The only scope requested is <code class="url">https://www.googleapis.com/auth/drive</code> (see, edit, create, and delete all Drive files, excluding the Application Data folder). Gmail, Contacts, Calendar, Photos, YouTube, and profile scopes are not requested.</td>
-                </tr>
-                <tr>
-                  <td>Why that data is used</td>
-                  <td>Only to carry out the rclone command the user starts on their own computer: list, upload, download, copy, sync, move, rename, delete, mount, or check those Drive files. It is not used for advertising, sale, credit, lending, or training a generalized AI or machine-learning model.</td>
-                </tr>
-                <tr>
-                  <td>Where that data is stored</td>
-                  <td>The OAuth access token and refresh token are written to the rclone config on the computer where the user runs <code>rclone config</code>. File bytes move between that computer and Google. If the user copies files to a folder or another storage location, they go to the destination in that command. The developer does not run a server that stores tokens or Drive files. This website does not receive authorization codes, tokens, file names, or file contents.</td>
-                </tr>
-                <tr>
-                  <td>Who that data is shared with</td>
-                  <td>The developer does not sell, rent, or give Google user data to advertisers, data brokers, information resellers, or other third parties. The user's computer sends Drive API requests directly to Google. No employee or contractor of the developer receives the files.</td>
-                </tr>
-                <tr>
-                  <td>How long it is kept, and how to delete it</td>
-                  <td>The developer keeps no copy, so there is no developer-side retention period. Tokens remain on the user's computer until the user deletes the rclone config or revokes Local Drive Sync at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>. Revocation invalidates the refresh token. Drive files are removed only when the user runs a delete command; rclone's default is to move them to the Drive trash.</td>
-                </tr>
-                <tr>
-                  <td>Limited Use</td>
-                  <td>Drive data is used only to provide the file operation the user requested. It is not transferred to a third party except to Google, to a destination the user named, or when a law compels disclosure of information the developer actually holds. The developer does not hold the files or tokens. People working for the developer do not read file contents. Google Workspace data is not used to develop, improve, or train non-personalized AI or ML models.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>The same practices are stated again in Chinese and English below. The home page is <a href="https://nav.otoame.top/rclone-gd-web/">https://nav.otoame.top/rclone-gd-web/</a>. The terms of service are <a href="https://nav.otoame.top/rclone-gd-web/terms.html">https://nav.otoame.top/rclone-gd-web/terms.html</a>.</p>
-        </section>
-
-        <p class="lede">本政策说明 Local Drive Sync 如何对待 Google 用户数据。它只适用于这个 OAuth 客户端，以及用来说明该客户端的本网站。</p>
-        <p class="lang-switch"><a href="#zh">中文</a> · <a href="#en">English</a></p>
-
-        <div class="policies">
-          <strong>本政策与首页、服务条款在同一网站。</strong>
-          <a href="https://nav.otoame.top/rclone-gd-web/">首页</a>
-          ·
-          <a href="https://nav.otoame.top/rclone-gd-web/terms.html">服务条款</a>
+        <h2>一、数据收集与使用</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>数据类型</th>
+                <th>使用目的</th>
+                <th>是否传给开发者</th>
+                <th>存储位置</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OAuth 访问令牌和刷新令牌</td>
+                <td>让 rclone 继续访问已授权的云端硬盘</td>
+                <td>否</td>
+                <td>运行 rclone 的那台电脑上的本地配置</td>
+              </tr>
+              <tr>
+                <td>文件和文件夹的名称、ID、类型、大小、修改时间、校验和、父级关系</td>
+                <td>列出、复制、移动、同步、校验</td>
+                <td>否</td>
+                <td>请求由使用者的电脑直接发给 Google，开发者不保存副本</td>
+              </tr>
+              <tr>
+                <td>文件内容</td>
+                <td>使用者自己执行的上传、下载、复制、同步或挂载</td>
+                <td>否</td>
+                <td>使用者的电脑与 Google 之间；若命令指定了目的地，则写到该目的地</td>
+              </tr>
+              <tr>
+                <td>本网站的访问</td>
+                <td>公开阅读本页</td>
+                <td>否</td>
+                <td>本网站不设账号，不保存表单，不使用分析工具</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div id="zh" lang="zh-Hans">
-          <h2>1. 谁对这条政策负责</h2>
-          <p>负责方是拥有该 Google Cloud 项目的个人开发者。Local Drive Sync 是该项目里的 OAuth 客户端名称，不是公司名。本政策不公布开发者的姓名、邮箱或账号。</p>
-          <p>联系方式是 Google 授权同意屏幕上显示的用户支持邮箱。该地址与 Google Cloud 品牌页里的用户支持邮箱相同。用户在授权时可以看到它，不需要先把个人资料交给本网站。</p>
-
-          <h2>2. 应用和本网站分别是什么</h2>
-          <p>实际调用 Google API 的程序是用户安装在自己电脑上的 rclone。用户把本客户端的凭据填进 rclone 之后，rclone 用用户授予的令牌访问 Google 云端硬盘。rclone 是独立的开源程序，本政策不改变 rclone 项目自己的许可证或隐私说明。</p>
-          <p>本网站是一组静态页面，用来公开应用的功能、本隐私权政策和<a href="terms.html">服务条款</a>。网站没有账号、没有表单、没有后台数据库，也不是 OAuth 重定向地址。</p>
-
-          <h2 id="google-user-data">3. Google 用户数据</h2>
-          <p>本节说明本应用访问、使用、保存、共享和删除的 Google 用户数据。本应用对 Google 用户数据的使用，以本节已经写明的做法为限。</p>
-
-          <h3>3.1 请求的范围</h3>
-          <p>本应用只请求下面一个 OAuth 范围：</p>
-          <div class="table-scroll">
+        <h2>二、请求的 Google 权限</h2>
+        <div class="table-scroll">
           <table>
             <thead>
               <tr>
                 <th>范围</th>
-                <th>Google 所示的权限</th>
-                <th>本应用为何需要它</th>
+                <th>是否请求</th>
+                <th>用途</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><code class="url">https://www.googleapis.com/auth/drive</code></td>
-                <td>查看、修改、创建和删除用户的全部 Google 云端硬盘文件。不包含应用数据文件夹。</td>
-                <td>用户在自己的电脑上用 rclone 列出、上传、下载、复制、同步、移动、重命名、删除、挂载或校验其云端硬盘中已有的文件。</td>
+                <td>是，仅此一个</td>
+                <td>查看、修改、创建和删除已授权账号的全部 Google 云端硬盘文件。不含应用数据文件夹。没有它，rclone 无法处理云端硬盘里已有的文件。</td>
+              </tr>
+              <tr>
+                <td>Gmail、通讯录、日历、相册、YouTube、用户资料</td>
+                <td>否</td>
+                <td>本应用不请求这些权限</td>
               </tr>
             </tbody>
           </table>
-          </div>
-          <p>本应用不请求 Gmail、Google 通讯录、Google 日历、Google 相册、YouTube，也不把 <code>userinfo.email</code>、<code>userinfo.profile</code> 或 OpenID 作为单独范围来请求。</p>
-          <p>在增加任何新范围之前，开发者会先更新本政策。在用户按新的同意屏幕重新授权之前，本应用不会用新范围访问数据。</p>
-
-          <h3>3.2 访问哪些数据</h3>
-          <p>在用户授予上述范围之后，rclone 可以按照用户运行的命令，从该用户的 Google 云端硬盘访问：</p>
-          <ul>
-            <li>文件和文件夹的名称、ID、MIME 类型、大小、修改时间和校验和</li>
-            <li>父级关系，以及完成列表、复制、移动、同步所需要的其他文件元数据</li>
-            <li>文件内容。只有用户执行下载、上传、复制、同步或挂载时，内容才会在用户的电脑和 Google 之间传输</li>
-          </ul>
-          <p>本应用不访问电子邮件正文、聊天记录、联系人、日历事件或相册。Google 自己的同意屏幕会显示正在授权的账号；本应用不另行收集个人简介。</p>
-
-          <h3>3.3 如何使用</h3>
-          <p>Google 用户数据只用于执行用户在自己电脑上发起的 rclone 操作，也就是上一节列出的文件管理功能。数据不用作其他用途。</p>
-          <p>具体而言，开发者不会把这些数据用于：</p>
-          <ul>
-            <li>投放、个性化、再营销或按兴趣展示广告</li>
-            <li>出售，或提供给数据经纪人、信息转售商、广告平台</li>
-            <li>判断信用或用于借贷</li>
-            <li>建立独立于用户这次操作的用户数据库</li>
-            <li>开发、改进或训练通用的、非个性化的人工智能或机器学习模型</li>
-          </ul>
-          <p>Google 云端硬盘属于 Google Workspace。本应用不使用 Google Workspace API 中的数据来开发、改进或训练非个性化的 AI/ML 模型。</p>
-
-          <h3>3.4 保存在哪里</h3>
-          <p>OAuth 访问令牌和刷新令牌由 rclone 写在用户运行 <code>rclone config</code> 的那台电脑的本地配置里。开发者的服务器上没有这些令牌，因为开发者不运营接收令牌的服务器。</p>
-          <p>文件字节在用户的电脑和 Google 的 API 之间传输。用户若把文件复制到自己的磁盘，文件位于用户选择的目录。用户若命令 rclone 把文件复制到用户自己配置的其他存储，文件会到达那个目的地。开发者不接收、不托管、不备份这些文件。</p>
-          <p>本网站不接收授权码、令牌、文件名或文件内容。授权码回到 rclone 在本机临时监听的地址，而不是回到本网站。rclone 文档中的示例地址是 <code class="url">http://127.0.0.1:53682/</code>。</p>
-
-          <h3>3.5 与谁共享、转移或披露</h3>
-          <p>开发者不向第三方出售、出租或披露 Google 用户数据，也不允许广告平台、数据经纪人或信息转售商获取这些数据。</p>
-          <p>数据的流向只有下面这些，而且都不是开发者把数据转交给自己的合作方：</p>
-          <ul>
-            <li>用户的电脑把 API 请求直接发给 Google，因为文件本来就存放在该用户的 Google 云端硬盘里</li>
-            <li>用户自己的命令如果指定了本机目录或其他存储，rclone 把文件写到用户指定的位置</li>
-            <li>法律强制要求，并且开发者当时确实持有相关信息时，开发者只提供法律要求的那一部分。按本政策，开发者并不持有云端硬盘文件或 OAuth 令牌</li>
-          </ul>
-          <p>开发者没有员工或承包商会接收这些文件。开发者不把 Google 用户数据作为资产出售。</p>
-
-          <h3>3.6 如何保护</h3>
-          <p>rclone 与 Google API 之间的传输使用 HTTPS。令牌存放在用户自己的电脑上，不经过本网站。</p>
-          <p>开发者不掌握用户的 Google 密码。本网站没有可以输入密码或令牌的表单。用户应限制自己电脑上 rclone 配置文件的读取权限，不要把客户端密钥、OAuth JSON 或 rclone 配置提交到公开仓库，也不要把它发送给别人。</p>
-          <p>本网站不加载第三方脚本、字体、分析或广告。页面不设置 Cookie，也不为识别访客而收集 IP 地址。托管方作为网站基础设施可能会在其自己的访问日志里短暂记录连接信息；本应用不使用这些日志，也不把它们和 Google 用户数据关联。</p>
-
-          <h3>3.7 保留多久，以及如何删除</h3>
-          <p>开发者不为 Google 用户数据设定保留期，因为开发者没有保存它的服务器。</p>
-          <ul>
-            <li>令牌一直留在用户的 rclone 配置里，直到用户删除该配置，或在 Google 账号里撤销本应用</li>
-            <li>撤销入口是 <a href="https://myaccount.google.com/permissions">Google 账号的第三方访问权限</a>。撤销使刷新令牌失效</li>
-            <li>用户删除本地 rclone 配置后，这台电脑上的令牌副本即被用户删除。开发者没有另一份可以再删</li>
-            <li>云端硬盘里的文件不会因为用户停止使用本应用而消失。只有用户自己运行删除命令时，rclone 才会删除文件；默认是放进垃圾箱</li>
-            <li>若用户要求开发者删除数据，开发者能采取的步骤是确认自己不持有该用户的令牌和文件。文件和令牌的删除由用户在自己的电脑上和 Google 账号里完成</li>
-          </ul>
-
-          <h2 id="limited-use">4. Limited Use（限制使用）</h2>
-          <p>本应用遵守 Google API Services User Data Policy 中对受限范围的 Limited Use 要求，政策原文见 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>。对应到本应用，限制是：</p>
-          <ul>
-            <li>只把数据用于向用户提供 rclone 的文件操作。这些操作由用户在自己电脑上的命令发起，是本应用唯一的用户可见功能</li>
-            <li>不把原始数据，以及由这些数据聚合、匿名或派生的数据，转移给第三方。第 3.5 节列出的情况除外：发给 Google 本身、写到用户自己指定的位置、或为了遵守适用法律</li>
-            <li>不允许人阅读用户的文件内容。开发者收不到这些文件。不存在工作人员查阅文件的日常流程。用户在自己的电脑上查看自己的文件，不是向开发者披露</li>
-            <li>不把数据用于广告、出售给数据经纪人、信用评估或借贷</li>
-            <li>不使用 Google Workspace API 的数据来开发、改进或训练非个性化的 AI/ML 模型</li>
-          </ul>
-
-          <h2>5. 本网站本身收集什么</h2>
-          <p>本网站不提供注册，不放置分析工具，不读取 rclone 配置，也不把访客输入保存到任何数据库。你在浏览器里阅读这些页面，不会因此向 Local Drive Sync 提交 Google 用户数据。</p>
-
-          <h2>6. 儿童</h2>
-          <p>Local Drive Sync 不面向 13 岁以下儿童。请不要用儿童的 Google 账号授权本应用。</p>
-
-          <h2>7. 政策变更</h2>
-          <p>如果数据的访问、使用、保存或共享方式发生变化，开发者会先更新本页，并修改页首的日期，然后才按新的方式使用 Google 用户数据。若变化需要新的权限，用户会在 Google 的同意屏幕上重新做一次授权选择。本页的 URL 保持不变，以便同意屏幕上的隐私权政策链接继续指向这份政策。</p>
         </div>
 
-        <div id="en" lang="en">
-          <h2>English</h2>
+        <h2>三、共享、保留与删除</h2>
+        <ul>
+          <li>开发者不向广告平台、数据经纪人或任何第三方出售、出租或提供这些数据。</li>
+          <li>开发者没有保存文件的服务器，也没有工作人员阅读文件内容。</li>
+          <li>令牌一直在使用者的电脑上，直到使用者删除 rclone 配置，或在 <a href="https://myaccount.google.com/permissions">Google 账号的第三方访问权限</a>里撤销 Local Drive Sync。</li>
+          <li>撤销后刷新令牌失效。云端硬盘里的文件不会因此消失；只有使用者自己运行删除命令时才会删除，默认进入垃圾箱。</li>
+        </ul>
 
-          <h3>1. Who is responsible</h3>
-          <p>The individual developer who owns the Google Cloud project is responsible for this policy. Local Drive Sync is the OAuth client name in that project, not a company name. This policy does not publish the developer's name, email address, or account identifier.</p>
-          <p>The contact method is the user support email shown on Google's OAuth consent screen. It is the same support email entered on the Google Cloud branding page. The user can see it at authorization time, without sending personal details to this website.</p>
+        <h2>四、Limited Use</h2>
+        <p>从 Google 云端硬盘获得的信息只用于完成使用者在自己电脑上发起的文件操作。这些信息不用于广告、出售、信用评估、借贷，也不用于训练通用的人工智能或机器学习模型。使用这些信息时遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> 的 Limited Use 要求。</p>
 
-          <h3>2. The application and this website</h3>
-          <p>The program that calls Google APIs is rclone, which the user installs on their own computer. After the user puts this client's credentials into rclone, rclone uses the token the user granted to access Google Drive. rclone is a separate open-source program. This policy does not change rclone's license or the rclone project's own notices.</p>
-          <p>This website is a set of static pages. It publishes what the application does, this privacy policy, and the <a href="terms.html">terms of service</a>. The site has no accounts, no forms, and no application database. It is not an OAuth redirect URI.</p>
-
-          <h3 id="en-google-user-data">3. Google User Data</h3>
-          <p>This section states how the application accesses, uses, stores, shares, and deletes Google user data. Use of Google user data is limited to the practices described here.</p>
-
-          <h3>3.1 Scope requested</h3>
-          <p>The application requests only this OAuth scope:</p>
-          <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Scope</th>
-                <th>Permission Google describes</th>
-                <th>Why this application needs it</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code class="url">https://www.googleapis.com/auth/drive</code></td>
-                <td>See, edit, create, and delete all of the user's Google Drive files. The Application Data folder is not included.</td>
-                <td>So the user can list, upload, download, copy, sync, move, rename, delete, mount, or check files that are already in their Drive, using rclone on their own computer.</td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-          <p>The application does not request Gmail, Google Contacts, Google Calendar, Google Photos, or YouTube. It does not request <code>userinfo.email</code>, <code>userinfo.profile</code>, or OpenID as separate scopes.</p>
-          <p>Before any new scope is added, the developer will update this policy. The application will not use a new scope until the user grants it again on a new consent screen.</p>
-
-          <h3>3.2 Data accessed</h3>
-          <p>After the user grants the scope above, rclone can access the following from that user's Google Drive, and only as far as the command the user runs requires:</p>
-          <ul>
-            <li>File and folder names, IDs, MIME types, sizes, modification times, and checksums</li>
-            <li>Parent relationships and other file metadata needed to list, copy, move, or sync</li>
-            <li>File contents. Contents move between the user's computer and Google only when the user downloads, uploads, copies, syncs, or mounts</li>
-          </ul>
-          <p>The application does not access email bodies, chat, contacts, calendar events, or photos. Google's own consent screen shows which account is granting access. The application does not collect a separate profile.</p>
-
-          <h3>3.3 How the data is used</h3>
-          <p>Google user data is used only to carry out the rclone file operation the user starts on their own computer, which is the file-management function listed above. It is not used for anything else.</p>
-          <p>In particular, the developer does not use this data to:</p>
-          <ul>
-            <li>Serve, personalize, retarget, or interest-target advertisements</li>
-            <li>Sell it, or provide it to data brokers, information resellers, or advertising platforms</li>
-            <li>Determine credit-worthiness or for lending</li>
-            <li>Build a user database separate from the operation the user just ran</li>
-            <li>Develop, improve, or train generalized or non-personalized AI or machine-learning models</li>
-          </ul>
-          <p>Google Drive is a Google Workspace product. The application does not use data from Google Workspace APIs to develop, improve, or train non-personalized AI/ML models.</p>
-
-          <h3>3.4 Where data is stored</h3>
-          <p>rclone writes the OAuth access token and refresh token into the local config on the computer where the user runs <code>rclone config</code>. Those tokens are not stored on a server operated by the developer, because the developer does not operate a server that receives tokens.</p>
-          <p>File bytes travel between the user's computer and Google's API. If the user copies files onto their own disk, the files are in the directory the user chose. If the user tells rclone to copy files to another storage location the user configured, the files go to that destination. The developer does not receive, host, or back up those files.</p>
-          <p>This website does not receive authorization codes, tokens, file names, or file contents. The authorization code returns to the temporary local listener rclone opens, not to this website. The rclone documentation uses <code class="url">http://127.0.0.1:53682/</code> as the example address.</p>
-
-          <h3>3.5 Sharing, transfer, and disclosure</h3>
-          <p>The developer does not sell, rent, or disclose Google user data to third parties, and does not allow advertising platforms, data brokers, or information resellers to obtain it.</p>
-          <p>Data moves only in the following ways, none of which is the developer handing data to a partner:</p>
-          <ul>
-            <li>The user's computer sends API requests directly to Google, because the files already live in that user's Google Drive</li>
-            <li>If the user's own command names a local directory or another storage location, rclone writes the files where the user pointed</li>
-            <li>If a law compels disclosure and the developer actually holds the information at that time, the developer provides only what that law requires. Under this policy the developer does not hold Drive files or OAuth tokens</li>
-          </ul>
-          <p>No employee or contractor of the developer receives these files. The developer does not sell Google user data as an asset.</p>
-
-          <h3>3.6 How data is protected</h3>
-          <p>Traffic between rclone and Google APIs uses HTTPS. Tokens stay on the user's computer and do not pass through this website.</p>
-          <p>The developer does not have the user's Google password. This website has no form that accepts a password or a token. The user should restrict who can read the rclone config on their computer, and should not commit a client secret, an OAuth JSON file, or an rclone config to a public repository, or send them to another person.</p>
-          <p>This website loads no third-party scripts, fonts, analytics, or ads. Pages do not set cookies and do not collect IP addresses in order to identify visitors. The host that serves the site may briefly keep connection data in its own access logs. The application does not use those logs and does not join them to Google user data.</p>
-
-          <h3>3.7 Retention and deletion</h3>
-          <p>The developer does not set a retention period for Google user data, because the developer has no server that stores it.</p>
-          <ul>
-            <li>Tokens remain in the user's rclone config until the user deletes that config or revokes the application in their Google Account</li>
-            <li>The revocation page is <a href="https://myaccount.google.com/permissions">Google Account third-party access</a>. Revocation invalidates the refresh token</li>
-            <li>When the user deletes the local rclone config, the token copy on that computer is gone. The developer has no other copy to delete</li>
-            <li>Files in Drive do not disappear because the user stops using this application. rclone deletes a Drive file only when the user runs a delete command. The default is to move the file to the trash</li>
-            <li>If a user asks the developer to delete their data, the step the developer can take is to confirm that the developer does not hold that user's tokens or files. Deleting the files and the token is done by the user, on their computer and in their Google Account</li>
-          </ul>
-
-          <h3 id="en-limited-use">4. Limited Use</h3>
-          <p>This application complies with the Limited Use requirements in the Google API Services User Data Policy for restricted scopes. The policy is published at the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>. Applied to this application, the limits are:</p>
-          <ul>
-            <li>Data is used only to provide rclone's file operations. The user starts those operations with a command on their own computer. That is the application's only user-facing function</li>
-            <li>Raw data, and data aggregated, anonymized, or derived from it, is not transferred to a third party, except for the cases in section 3.5: sending it to Google itself, writing it where the user explicitly pointed, or complying with applicable law</li>
-            <li>People are not allowed to read the user's file contents. The developer never receives the files. There is no routine in which staff read them. The user looking at their own files on their own computer is not disclosure to the developer</li>
-            <li>Data is not used for advertising, sale to data brokers, credit-worthiness, or lending</li>
-            <li>Data from Google Workspace APIs is not used to develop, improve, or train non-personalized AI/ML models</li>
-          </ul>
-
-          <h3>5. What this website collects</h3>
-          <p>This website has no sign-up, no analytics, and no database of visitor input. It does not read an rclone config. Reading these pages in a browser does not submit Google user data to Local Drive Sync.</p>
-
-          <h3>6. Children</h3>
-          <p>Local Drive Sync is not directed at children under 13. Do not authorize this application with a child's Google Account.</p>
-
-          <h3>7. Changes</h3>
-          <p>If the way data is accessed, used, stored, or shared changes, the developer will update this page and its date before using Google user data in the new way. If the change needs a new permission, the user makes a new choice on Google's consent screen before that permission is used. The URL of this page stays the same, so the privacy policy link on the consent screen keeps pointing here.</p>
-        </div>
+        <h2>五、政策变更</h2>
+        <p>如果数据的访问或使用方式改变，会先更新本页和页首日期，再按新的方式使用。本页地址保持为 <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">https://nav.otoame.top/rclone-gd-web/privacy.html</a>。</p>
+        <p>首页：<a href="https://nav.otoame.top/rclone-gd-web/">https://nav.otoame.top/rclone-gd-web/</a></p>
       </main>
 
       <footer>

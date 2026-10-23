@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="pRiYZmK5AHzz8g-ixS54J0wjK1TQdz0CeQEFgPr1GlE">
   <title>Local Drive Sync</title>
-  <meta name="description" content="Local Drive Sync 是个人在自己的电脑上通过 rclone 访问自己的 Google 云端硬盘时使用的 OAuth 客户端。本网站不收集数据。">
+  <meta name="description" content="Local Drive Sync 用于在自己的电脑上，用 rclone 读写自己的 Google 云端硬盘。">
   <meta name="robots" content="index,follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -15,7 +15,7 @@
   <div class="wrap">
     <article class="sheet">
       <header>
-        <a class="brand" href="index.html">Local Drive Sync</a>
+        <a class="brand" href="https://nav.otoame.top/rclone-gd-web/">Local Drive Sync</a>
         <nav aria-label="本站页面">
           <a href="https://nav.otoame.top/rclone-gd-web/" aria-current="page">首页</a>
           <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">隐私权政策</a>
@@ -25,120 +25,33 @@
 
       <main id="content">
         <h1>Local Drive Sync</h1>
-        <p class="meta">最后更新：2026-10-23。本页对所有访客直接显示。</p>
+        <p class="lede">在自己的电脑上，用 rclone 读写自己的 Google 云端硬盘。</p>
+        <p class="meta">应用名称：Local Drive Sync。本页公开，打开即可阅读。</p>
 
-        <section id="purpose" lang="en">
-          <h2>Purpose of this application</h2>
-          <p>Local Drive Sync is a personal OAuth client for Google Drive. Its purpose is to let one developer, on a computer that developer controls, use the open-source program rclone to list, upload, download, copy, sync, move, rename, delete, mount, and check files in a Google Drive account that developer is allowed to use.</p>
-          <p>The shared rclone client_id is being retired. This client replaces it for that developer only. Local Drive Sync is not a Google product and is not operated by the rclone project. This website only explains the client. It does not provide file storage, it does not sync files, and it has no account page.</p>
-          <p>The only Google scope this client requests is <code class="url">https://www.googleapis.com/auth/drive</code>. That scope is required so rclone can work on files that are already in the Drive. Tokens stay in the rclone config on the user's computer. This website is not the OAuth redirect URI and does not receive the authorization code, the token, or the files.</p>
-        </section>
+        <h2>这个应用的用途</h2>
+        <p>Local Drive Sync 是一个个人使用的 OAuth 客户端。它只做一件事：让开发者在自己控制的电脑上运行开源程序 rclone，从而列出、上传、下载、复制、同步、移动、重命名和删除自己有权使用的 Google 云端硬盘文件。</p>
+        <p>rclone 项目共用的 client_id 正在停用。这个客户端用来代替它，只给创建它的人使用。它不是 Google 的产品，也不是 rclone 项目运营的服务。</p>
+
+        <h2>它能做的操作</h2>
+        <ul>
+          <li>列出文件夹和文件</li>
+          <li>上传、下载、复制、同步</li>
+          <li>移动和重命名</li>
+          <li>删除。默认放进云端硬盘垃圾箱</li>
+          <li>挂载或校验</li>
+        </ul>
+        <p>这些操作只在使用者自己运行 rclone 命令时发生。</p>
+
+        <h2>它为什么需要 Google 用户数据</h2>
+        <p>要读写云端硬盘里已经存在的文件，需要这一个权限：</p>
+        <p><code class="url">https://www.googleapis.com/auth/drive</code></p>
+        <p>令牌保存在运行 rclone 的那台电脑上。文件在这台电脑和 Google 之间传输。本网站不接收授权码、令牌或文件。</p>
 
         <div class="policies">
-          <strong>Privacy policy and terms, on this same website:</strong>
+          <strong>隐私权政策</strong>
           <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">https://nav.otoame.top/rclone-gd-web/privacy.html</a>
-          <br>
+          <strong>服务条款</strong>
           <a href="https://nav.otoame.top/rclone-gd-web/terms.html">https://nav.otoame.top/rclone-gd-web/terms.html</a>
-        </div>
-
-        <p class="lede">个人在自己的电脑上，用开源程序 rclone 访问自己的 Google 云端硬盘时，所使用的 OAuth 客户端。</p>
-        <p class="lang-switch"><a href="#zh">中文</a> · <a href="#en">English</a></p>
-
-        <div id="zh" lang="zh-Hans">
-          <h2>这个应用是什么</h2>
-          <p>Local Drive Sync 是 Google Cloud 项目里登记的 OAuth 客户端名称。用户在自己的电脑上运行 <a href="https://rclone.org/">rclone</a>，并在 <code>rclone config</code> 里填入这个客户端之后，rclone 才能代表用户调用 Google 云端硬盘 API。</p>
-          <p>这样做的原因写在 rclone 的文档里：rclone 项目共用的 client_id 正在停用，使用者需要<a href="https://rclone.org/drive/#making-your-own-client-id">创建自己的客户端</a>。本客户端只服务创建它的开发者本人，在其自己控制的电脑上，访问其有权使用的 Google 云端硬盘。</p>
-          <p>Local Drive Sync 不是 Google 的产品，也不是 rclone 项目或其维护者运营的服务。本网站只说明这个客户端，本身不提供网盘、不同步文件、也不接受登录。</p>
-
-          <h2>它做什么</h2>
-          <p>用户在自己的电脑上运行 rclone 命令时，程序可以对该用户已授权的云端硬盘执行用户选中的操作：</p>
-          <ul>
-            <li>列出文件夹和文件</li>
-            <li>上传、下载、复制、同步</li>
-            <li>移动和重命名</li>
-            <li>删除。rclone 默认把文件放进云端硬盘垃圾箱；只有用户自己关闭垃圾箱选项时才会直接删除</li>
-            <li>挂载或校验</li>
-          </ul>
-          <p>这些操作只在用户运行相应命令时发生。开发者不会远程触发它们。</p>
-
-          <h2>它不做什么</h2>
-          <ul>
-            <li>不访问 Gmail、通讯录、日历、相册或其他 Google 产品</li>
-            <li>不把文件或令牌发送到开发者的服务器。开发者不运营这样的服务器</li>
-            <li>不在本网站收集账号、文件或授权码</li>
-            <li>不向公众提供注册或代管同步</li>
-            <li>不把 Google 用户数据用于广告、出售、信用评估、借贷，或训练通用人工智能模型</li>
-          </ul>
-
-          <h2>为什么请求 Google 用户数据</h2>
-          <p>rclone 要按用户的命令读写云端硬盘里已有的文件，需要用户在 Google 同意屏幕上授予这一个范围：</p>
-          <p><code class="url">https://www.googleapis.com/auth/drive</code></p>
-          <p>Google 对这个范围的说明是：查看、修改、创建和删除你的全部 Google 云端硬盘文件。它不包含“应用数据文件夹”。没有这个范围，rclone 无法对用户云端硬盘里已有的文件执行上面列出的命令。本客户端只声明这一个范围。</p>
-          <p>更窄的范围做不到同一件事。例如 <code>drive.file</code> 只能看到本应用自己创建的文件，用户云端硬盘里原有的文件对 rclone 不可见，复制和同步会不完整。</p>
-
-          <h2>授权发生在哪里</h2>
-          <p>用户运行 <code>rclone config</code> 时，系统浏览器打开 Google 的同意屏幕。用户同意后，Google 把授权码送回用户电脑上 rclone 临时打开的本机地址。rclone 文档中的示例是 <code class="url">http://127.0.0.1:53682/</code>。rclone 在这台电脑上用授权码换取令牌，并写入本机配置。</p>
-          <p>本网站不是 OAuth 重定向地址，不接收授权码，也不参与令牌交换。</p>
-
-          <h2>数据留在哪里</h2>
-          <p>访问令牌和刷新令牌保存在用户运行 rclone 的那台电脑上。文件内容只在这台电脑和 Google 之间传输。如果用户自己把云端硬盘中的文件复制到本机目录，或复制到用户自己配置的其他存储，文件会到达用户在命令里指定的位置。开发者不指定目的地，也不接收这些文件。</p>
-
-          <h2>如何停止访问</h2>
-          <p>用户可以随时打开 Google 账号的<a href="https://myaccount.google.com/permissions">第三方访问权限</a>，撤销 Local Drive Sync。撤销后，已经发出的刷新令牌失效。用户还应删除自己电脑上对应的 rclone 配置。开发者没有另一份令牌或文件可以删除。</p>
-
-          <h2>谁在运营</h2>
-          <p>由创建该 Google Cloud 项目的个人开发者运营。本页不公布姓名、邮箱或账号。需要联系开发者时，请使用 Google 授权同意屏幕上显示的用户支持邮箱。该地址与 Google Cloud 品牌页中填写的用户支持邮箱是同一个，授权时即可看到。</p>
-          <p>数据如何被访问、使用、保存、共享和删除，写在<a href="privacy.html">隐私权政策</a>。使用条件写在<a href="terms.html">服务条款</a>。</p>
-        </div>
-
-        <div id="en" lang="en">
-          <h2>English</h2>
-          <p class="lede">Local Drive Sync is the OAuth client a person uses so that rclone, on that person's own computer, can access a Google Drive that person is allowed to use.</p>
-
-          <h3>What this application is</h3>
-          <p>Local Drive Sync is the name of an OAuth client registered in a Google Cloud project. After the user enters that client in <code>rclone config</code>, the open-source program <a href="https://rclone.org/">rclone</a> can call the Google Drive API on the user's behalf.</p>
-          <p>The reason is the one given in the rclone documentation: the shared rclone client_id is being retired, and each user is told to <a href="https://rclone.org/drive/#making-your-own-client-id">create their own client</a>. This client is used by the developer who created it, on computers that developer controls, for Google Drive accounts that developer is allowed to use.</p>
-          <p>Local Drive Sync is not a Google product, and it is not operated by the rclone project or its maintainers. This website only describes the client. It does not store files, sync anything, or offer a sign-in.</p>
-
-          <h3>What it does</h3>
-          <p>When the user runs an rclone command on their own computer, rclone can do the operation the user chose against the Drive they authorized:</p>
-          <ul>
-            <li>List folders and files</li>
-            <li>Upload, download, copy, and sync</li>
-            <li>Move and rename</li>
-            <li>Delete. rclone sends files to the Drive trash unless the user turns trash off</li>
-            <li>Mount or check files</li>
-          </ul>
-          <p>These operations run only when the user runs the command. The developer does not trigger them remotely.</p>
-
-          <h3>What it does not do</h3>
-          <ul>
-            <li>It does not access Gmail, Contacts, Calendar, Photos, or any other Google product</li>
-            <li>It does not send files or tokens to a server run by the developer. There is no such server</li>
-            <li>This website does not collect accounts, files, or authorization codes</li>
-            <li>It is not a public hosted-sync product and it has no sign-up</li>
-            <li>It does not use Google user data for advertising, sale, credit, lending, or training generalized AI models</li>
-          </ul>
-
-          <h3>Why Google user data is requested</h3>
-          <p>To read and write files that are already in the user's Drive, rclone needs the user to grant one scope on Google's consent screen:</p>
-          <p><code class="url">https://www.googleapis.com/auth/drive</code></p>
-          <p>Google describes this scope as permission to see, edit, create, and delete all of the user's Google Drive files. It does not include the Application Data folder. Without it, rclone cannot run the commands above on files that are already in the Drive. This client declares only this scope.</p>
-          <p>A narrower scope does not provide the same function. <code>drive.file</code>, for example, can see only files this application created. Files already in the Drive stay invisible to rclone, so copy and sync would be incomplete.</p>
-
-          <h3>Where authorization happens</h3>
-          <p>During <code>rclone config</code>, the system browser opens Google's consent screen. After the user agrees, Google returns an authorization code to a temporary local address opened by rclone on that computer. The rclone documentation uses <code class="url">http://127.0.0.1:53682/</code> as the example. rclone exchanges the code for tokens on that computer and writes them into the local config.</p>
-          <p>This website is not the OAuth redirect URI. It does not receive the authorization code and it does not take part in the token exchange.</p>
-
-          <h3>Where data stays</h3>
-          <p>Access tokens and refresh tokens stay on the computer where the user runs rclone. File bytes move between that computer and Google. If the user copies Drive files into a local folder, or into another storage location the user configured, the files go to the destination in that command. The developer does not choose the destination and does not receive the files.</p>
-
-          <h3>How to stop access</h3>
-          <p>The user can revoke Local Drive Sync at any time on Google's <a href="https://myaccount.google.com/permissions">third-party access</a> page. Revocation invalidates the refresh token. The user should also delete the matching rclone config on their computer. The developer has no second copy of the token or the files to delete.</p>
-
-          <h3>Who operates it</h3>
-          <p>An individual developer operates the Google Cloud project that owns this client. This page does not publish a name, an email address, or an account identifier. To contact the developer, use the user support email shown on Google's OAuth consent screen. That address is the same support email entered on the Google Cloud branding page, and it is visible when the user authorizes the app.</p>
-          <p>How data is accessed, used, stored, shared, and deleted is in the <a href="privacy.html">privacy policy</a>. Conditions of use are in the <a href="terms.html">terms of service</a>.</p>
         </div>
       </main>
 
@@ -147,7 +60,7 @@
           <a href="https://nav.otoame.top/rclone-gd-web/privacy.html">隐私权政策</a>
           <a href="https://nav.otoame.top/rclone-gd-web/terms.html">服务条款</a>
         </nav>
-        <p>Local Drive Sync 与 Google、rclone 项目均无隶属关系。最后更新：2026-10-23。</p>
+        <p>Local Drive Sync。最后更新：2026-10-23。</p>
       </footer>
     </article>
   </div>
